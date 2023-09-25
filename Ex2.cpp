@@ -1,14 +1,19 @@
 #include <iostream>
+#include <vector>
+
 using namespace std;
+
 int main()
 {
-    int tableau[6], Maximum, Minimum;
+    vector <int> tableau;
+    int Maximum, Minimum, valeur;
 
 
     for (int i = 0; i < 6; i++)
     {
         cout << "Donner la valeur n" << i+1 << " : ";
-        cin >> tableau[i]; 
+        cin >> valeur; 
+        tableau.push_back(valeur);
     }
 
    if (tableau[0] > tableau[1])
@@ -36,9 +41,5 @@ int main()
         }
     }
    }
-
-
-    
-    
     cout << "La plus petit valeur est : " << Minimum << " et la plus  grande est : " << Maximum << endl;
 }

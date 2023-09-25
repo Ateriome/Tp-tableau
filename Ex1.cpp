@@ -1,25 +1,31 @@
 #include <iostream>
+#include <vector>
+
 using namespace std;
+
 int main()
 {
-    float *tableau, moyenne = 0;
-    int taille;
+    vector <float> tableau;
+    vector <int>::size_type i;
+    float valeur = 0, moyenne = 0;
 
-    cout << "Combien de valeur voulez vous entrez ?" << endl;
-    cin >> taille;
-    tableau = new float [taille];
-
-    for (int i = 0; i < taille; i++)
+    while ( valeur >= 0)
     {
-        cout << "Donner la valeur n" << i+1 << endl;
-        cin >> tableau[i]; 
+        cout << "Donner une valeur : ";
+        cin >> valeur;
+        if ( valeur >= 0)
+        {
+            tableau.push_back(valeur);
+        }
     }
+    
+    auto taille { std::size(tableau) };
 
-    for (int i = 0; i < taille; i++)
+    for (i = 0; i < taille; i++)
     {
         moyenne = moyenne + tableau[i];
     }
-    
+
     moyenne = moyenne / taille;
     cout << "La moyenne est de : " << moyenne << endl;
 }
